@@ -18,6 +18,7 @@ The final grade will depend on :
 
 - Code cleanness and readability
 - Project structure
+- Commits and PRs relevance in the Github repo
 - Relevance of the dashboard from a business perspective 
 - Respect of data viz best practices 
 - Beauty of the visualisations
