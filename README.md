@@ -2,7 +2,7 @@
 This repository stores all the needed resources for the Data Visualisation module for BDIA Master of Dauphine Tunis
 
 ## Workshops
-The module include some workshop sessions for which the following computer set up will be needed : 
+The module includes some workshop sessions for which the following computer set up will be needed : 
 
 - A working version of Python 3
 - The creation of a virtual environment in which all the needed packages will be installed (students can choose chat they want between pyenv, anaconda, ...)
