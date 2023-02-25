@@ -19,10 +19,19 @@ The final grade will depend on :
 
 The project purpose is to answer a business question related to [the following dataset](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams) (Student's performance in exams) : 
 
-How can we explain and predict both math, reading and writing scores of high school students from the United States ?  
+<strong>How can we explain and predict both math, reading and writing scores of high school students from the United States ?</strong>
 
 The data application is expected to have : 
 
 - A home page from which every dashboards are accessible 
 - A dashboard enabling the user to explore the dataset : This dashboard should have a side bar in which the user can select different filters (columns of the dataset). The plots (bar plots, scatter plots, box plots, line plots, etc.) should be efficiently designed and each one should give a relevant amount of information.  
-- A dashboard to present the results from your analysis and your answer to the business question. Regression, Clustering, use the algorithms/models you want to answer the question. This dashboard can also be interactive with filters and widgets. 
+- A dashboard to present the results of your analysis and your answer to the business question. Regression, Clustering, use the algorithms/models you want to answer the question. This dashboard can also be interactive with filters and widgets. 
+
+Each dashboard should have a "Refresh dashboard" button. 
+They can also includ in-dashboard widgets triggering functions live on modification.
+
+## Resources
+
+- Panel website : https://panel.holoviz.org/
+- Panel discourse : https://discourse.holoviz.org/c/panel/5
+- Bokeh discourse : https://discourse.bokeh.org/
