@@ -5,5 +5,6 @@ This repository stores all the needed resources for the Data Visualisation modul
 The module includes some workshop sessions for which the following computer set up will be needed : 
 
 - A working version of Python 3
-- The creation of a virtual environment in which all the needed packages will be installed (students can choose chat they want between pyenv, anaconda, ...)
+- The creation of a virtual environment in which all the needed packages will be installed (students can choose what they want between pyenv, anaconda, ...)
 - A working IDE (Pycharm or VSCode)
+- A Google account to use Google colab
