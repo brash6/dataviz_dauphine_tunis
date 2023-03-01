@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700');
+@import url('https://connect-cdn.liveramp.com/fonts/flexo.css');
+
+.bk {
+    margin-left: 0 !important;
+}
+
+.bk-root .bk-btn.bk-btn-default.bk-active {
+    border-color: #73c06b;
+    color: #73c06b;
+    background-color: rgba(115,192,107,0.15);
+}
+
+.bk-canvas-events {
+box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+border-radius: 5px;
+padding: 10px;
+}
+
+.bk-root *.bk-btn {
+font-size: 12px;
+font-weight: 500;
+border-color: #bdbdbd;
+color: rgba(0, 0, 0, 0.38);
+font-family: 'Open Sans', sans-serif;
+}
+
+.bk-root .bk-input:focus {
+border: 1px solid #73c06b;
+box-shadow: none;
+}
+
+.bk-root .bk-input:hover {
+border: 1px solid #73c06b;
+}
+
+.bk-root .choices__inner:focus {
+border: 1px solid #73c06b;
+box-shadow: none;
+}
+
+.bk-root .choices__inner:hover {
+border: 1px solid #73c06b;
+}
+
+.bk-root .choices__list--multiple .choices__item {
+color: #757575;
+font-size: 12px;
+font-weight: 600;
+border-radius: 4px;
+background-color: #eeeeee;
+}
+.bk-root .choices__inner .choices__item.solid {
+    background-color: #eeeeee;
+    border: none;
+    border-radius: 5px;
+    color: #757575;
+}
+
+.bk-root .choices__list .choices__list--dropdown {
+font-family: 'Open Sans', sans-serif;
+color: #555575;
+}
+
+.bk-root .choices__list--dropdown .choices__item--selectable.is-highlighted {
+background-color: rgba(115,192,107,0.15);
+data-select-text: "";
+}
+
+.bk-root .choices[data-type*=select-multiple] .choices__button.solid {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20focusable%3D%22false%22%20aria-hidden%3D%22true%22%20fill%3D%22%23b9b9b9%22%3E%0A%3Cpath%20d%3D%22M12%202C6.47%202%202%206.47%202%2012s4.47%2010%2010%2010%2010-4.47%2010-10S17.53%202%2012%202zm5%2013.59L15.59%2017%2012%2013.41%208.41%2017%207%2015.59%2010.59%2012%207%208.41%208.41%207%2012%2010.59%2015.59%207%2017%208.41%2013.41%2012%2017%2015.59z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+    background-size: 17px;
+    border-left-width: 0px;
+    margin-left: -0px
+
+}
+
+.bk-root .choices[data-type*=select-multiple] .choices__button.solid:hover {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20focusable%3D%22false%22%20aria-hidden%3D%22true%22%20fill%3D%22%23757575%22%3E%0A%3Cpath%20d%3D%22M12%202C6.47%202%202%206.47%202%2012s4.47%2010%2010%2010%2010-4.47%2010-10S17.53%202%2012%202zm5%2013.59L15.59%2017%2012%2013.41%208.41%2017%207%2015.59%2010.59%2012%207%208.41%208.41%207%2012%2010.59%2015.59%207%2017%208.41%2013.41%2012%2017%2015.59z%22%20%2F%3E%0A%3C%2Fsvg%3E")
+}
+
+.bk-root .bk-btn-success {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20focusable%3D%22false%22%20aria-hidden%3D%22true%22%20fill%3D%22%2373c06b%22%3E%0A%3Cpath%20d%3D%22M17.65%206.35c-1.63-1.63-3.94-2.57-6.48-2.31-3.67.37-6.69%203.35-7.1%207.02C3.52%2015.91%207.27%2020%2012%2020c3.19%200%205.93-1.87%207.21-4.56.32-.67-.16-1.44-.9-1.44-.37%200-.72.2-.88.53-1.13%202.43-3.84%203.97-6.8%203.31-2.22-.49-4.01-2.3-4.48-4.52C5.31%209.44%208.26%206%2012%206c1.66%200%203.14.69%204.22%201.78l-1.51%201.51c-.63.63-.19%201.71.7%201.71H19c.55%200%201-.45%201-1V6.41c0-.89-1.08-1.34-1.71-.71l-.64.65z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: 30%;
+    background-size: 25px;
+    color: #73c06b;
+    background-color: white;
+    border: 1px solid #73c06b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.75;
+    border-radius: 4px;
+    text-indent: +1.5em;
+}
+
+.bk-root .bk-btn-success:hover {
+    background-color: rgba(115,192,107,0.15);
+}
+
+.bk-root .bk-btn.bk-btn-success:focus {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20focusable%3D%22false%22%20aria-hidden%3D%22true%22%20fill%3D%22%2373c06b%22%3E%0A%3Cpath%20d%3D%22M17.65%206.35c-1.63-1.63-3.94-2.57-6.48-2.31-3.67.37-6.69%203.35-7.1%207.02C3.52%2015.91%207.27%2020%2012%2020c3.19%200%205.93-1.87%207.21-4.56.32-.67-.16-1.44-.9-1.44-.37%200-.72.2-.88.53-1.13%202.43-3.84%203.97-6.8%203.31-2.22-.49-4.01-2.3-4.48-4.52C5.31%209.44%208.26%206%2012%206c1.66%200%203.14.69%204.22%201.78l-1.51%201.51c-.63.63-.19%201.71.7%201.71H19c.55%200%201-.45%201-1V6.41c0-.89-1.08-1.34-1.71-.71l-.64.65z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: 30%;
+    background-size: 25px;
+}
+
+.bk-root .bk-btn-primary:hover {
+    background-color: #edecec;
+    border-color: #9e9e9e;
+}
+
+.bk-root .bk-btn-primary {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20focusable%3D%22false%22%20aria-hidden%3D%22true%22%20fill%3D%22%239e9e9e%22%3E%0A%3Cpath%20d%3D%22M20%2C6A2%2C2%200%200%2C1%2022%2C8V18A2%2C2%200%200%2C1%2020%2C20H4C2.89%2C20%202%2C19.1%202%2C18V6C2%2C4.89%202.89%2C4%204%2C4H10L12%2C6H20M19.25%2C13H16V9H14V13H10.75L15%2C17.25%22%20%2F%3E%0A%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: 29.5%;
+    background-size: 23px;
+    border-color: #9e9e9e;
+    color: #9e9e9e;
+    background-color: white;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    width: 274px;
+    left: 1.65%;
+    line-height: 1.75;
+    border-radius: 4px;
+    text-indent: +2.3em;
+}
+
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+    background: #73c06b;
+    border-color: #73c06b;
+}
+
+.bk.alert-light h2{
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.bk.alert-light p.date-refresh {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #212121;
+}
+
+.bk.alert-light p {
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #212121;
+}
+
+.bk-root .bk-btn-warning {
+    background-repeat: no-repeat;
+    background-position: 30%;
+    background-size: 25px;
+    color: #73c06b;
+    background-color: white;
+    border: 1px solid #73c06b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.75;
+    border-radius: 4px;
+}
+
+.bk-root .bk-btn-warning:hover {
+    background-color: rgba(115,192,107,0.15);
+    border: 1px solid #73c06b;
+}
+
+.bk-root .bk-btn.bk-btn-warning:focus {
+    background-repeat: no-repeat;
+    background-position: 30%;
+    background-size: 25px;
+}
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="#757575">
+<path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z" />
+</svg>
+
+
+"Refresh"
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="#73c06b">
+<path d="M17.65 6.35c-1.63-1.63-3.94-2.57-6.48-2.31-3.67.37-6.69 3.35-7.1 7.02C3.52 15.91 7.27 20 12 20c3.19 0 5.93-1.87 7.21-4.56.32-.67-.16-1.44-.9-1.44-.37 0-.72.2-.88.53-1.13 2.43-3.84 3.97-6.8 3.31-2.22-.49-4.01-2.3-4.48-4.52C5.31 9.44 8.26 6 12 6c1.66 0 3.14.69 4.22 1.78l-1.51 1.51c-.63.63-.19 1.71.7 1.71H19c.55 0 1-.45 1-1V6.41c0-.89-1.08-1.34-1.71-.71l-.64.65z" />
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true" fill="#9e9e9e">
+<path d="M20,6A2,2 0 0,1 22,8V18A2,2 0 0,1 20,20H4C2.89,20 2,19.1 2,18V6C2,4.89 2.89,4 4,4H10L12,6H20M19.25,13H16V9H14V13H10.75L15,17.25" />
+</svg>
