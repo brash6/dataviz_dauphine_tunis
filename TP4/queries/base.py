@@ -15,7 +15,6 @@ from TP4.modules.base.cpg import CPG
 from TP4.utils.api_helper import RequestsApi
 
 
-
 class BQBase(object):
     taxonomy = "Global"
     currency = "EUR"
@@ -74,14 +73,6 @@ class BQBase(object):
         else:
             return "CPG"
 
-    def get_audience_where_condition(self):
-        if "CRF" in self.cpg_company:
-            condition = "AND profiling_crf_adv IS TRUE"
-        else:
-            condition = "AND profiling_3_party IS TRUE"
-        return condition
-
-
     def get_user_filters(self, df_user_filters):
         dict_filters = df_user_filters.drop('user', axis=1).to_dict('list')
         user_filters = {}
@@ -96,6 +87,7 @@ class BQBase(object):
                     user_filters[key] = dict_filters[key]
 
         return is_empty, user_filters
+
 
 if __name__ == "__main__":
     BQ = BQBase("101013")

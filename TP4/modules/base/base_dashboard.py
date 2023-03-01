@@ -229,16 +229,6 @@ class BaseDashboard(param.Parameterized):
         # --------------------------------------------------------------------------
         action = "refresh data"
         dashboard_identifier = get_dashboard_identifier_from_session()
-        logger.info("sending dashboard usage request")
-        send_dashboard_usage(
-            tenant_id=int(self.BQHandler.tenant_id),
-            tenant_name=self.BQHandler.tenant_name,
-            dashboard_identifier=dashboard_identifier,
-            action=action,
-            data_load_time=data_load_time,
-            filters=self.filters
-        )
-        logger.info("dashboard usage request sent")
 
         if self.first:
             pn.state.onload(self.no_data_notification_initialisation)
