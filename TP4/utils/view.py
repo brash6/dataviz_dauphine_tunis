@@ -1,5 +1,4 @@
 import panel as pn
-from google.api_core.exceptions import NotFound
 from logzero import logger
 
 from TP4.constants.constants import ENV
@@ -56,9 +55,3 @@ def get_template(BQClient, Dashboard, name_tab="Sales Overview"):
         raise e
     return template
 
-
-def get_exception(error):
-    error_msg = "An unknown error has occured"
-    if isinstance(error, NotFound):
-        error_msg = "The underlying data is not yet available"
-    return error_msg
