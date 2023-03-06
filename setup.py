@@ -5,11 +5,8 @@ setup(
     version="0.0.1",
     packages=find_packages(exclude=("tests", "tasks")),
     install_requires=[
-        "google-cloud-bigquery==2.34.2",
-        "google-cloud-secret-manager==2.9.2",
-        "google-cloud-storage==2.2.1",
         "pandas==1.3.4",
-        "pandas-gbq==0.15.0",
+        "pandasql==0.7.3",
         "pyarrow>=3.0.0",
         "pytest>=6.2.3",
         "logzero",
@@ -37,7 +34,6 @@ setup(
         "requests>=2.26.0",
         "jinja2==2.11.3",
         "markupsafe==2.0.1",
-        "webdriver-manager==3.8.3"
 
     ],
     url="",
