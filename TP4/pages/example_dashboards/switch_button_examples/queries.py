@@ -49,7 +49,8 @@ class BQClient(BQBase):
         ORDER BY
             sales DESC
         """
-        # Run query and store results in a pandas dataframe
+        # Run query and store results in a pandas dataframe`
+        query = query.replace("\n", "")
         data = ps.sqldf(query)
         return data
 
@@ -78,6 +79,7 @@ class BQClient(BQBase):
             year
         """
         # Run query and store results in a pandas dataframe
+        query = query.replace("\n", "")
         data = ps.sqldf(query)
         return data
 
@@ -90,6 +92,7 @@ class BQClient(BQBase):
 
         FROM df
         """
+        query = query.replace("\n", "")
         fields = ps.sqldf(query)
 
         fields = fields.append({"platform": "ALL", "genre": "ALL", "publisher": "ALL"}, ignore_index=True)
