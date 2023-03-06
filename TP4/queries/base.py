@@ -5,7 +5,6 @@ import time
 from email import header
 
 import pandas as pd
-from google.cloud import bigquery
 from logzero import logger
 
 from TP4.constants.constants import (
