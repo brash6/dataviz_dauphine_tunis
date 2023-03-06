@@ -36,6 +36,8 @@ class Dashboard(BaseExampleDashboard):
     # Declare here the used selector
     selector = param.ClassSelector(class_=VGSelector)
     switch_button = param.ObjectSelector(default='PCA')
+    n_neighbors = param.Integer(30)
+    min_distance = param.Number(0.1)
 
     # Doesn't change, used to instantiate all the plots to render using Panel
     panels = param.List()
@@ -56,7 +58,26 @@ class Dashboard(BaseExampleDashboard):
             parameters=["switch_button"],
             widgets={"switch_button": pn.widgets.RadioButtonGroup(name='switch_button', value='PCA',
                                                                          options=['PCA', 'T-SNE', 'UMAP'],
-                                                                         width=150, align='center')})
+                                                                         width=300, align='center')})
+
+        self.n_neighbors_panel = pn.Param(self,
+                                               name="",
+                                               parameters=["n_neighbors"],
+                                               widgets={
+                                                   "n_neighbors": pn.widgets.IntSlider(start=5, end=50, value=30,
+                                                                                            step=1,
+                                                                                            name="Number of Neighbors",
+                                                                                            max_width=310,
+                                                                                            align='center')})
+
+        self.min_distance_panel = pn.Param(self,
+                                          name="",
+                                          parameters=["min_distance"],
+                                          widgets={
+                                              "min_distance": pn.widgets.FloatSlider(start=0, end=1, value=0.1,
+                                                                                  name="Min distance",
+                                                                                  max_width=310,
+                                                                                  align='center')})
 
         # Create Plots
         self.plot_text = PanelText(text="""
@@ -127,14 +148,36 @@ class Dashboard(BaseExampleDashboard):
             self.quality_grades_distribution.panel,
             pn.Row(pn.Column(self.switch_button_panel, margin=(0, 10, 0, 10)),
                    pn.Column('', max_width=100)),
+            pn.Row(self.n_neighbors_panel, self.min_distance_panel),
             self.projection_scatter_plot.panel,
         ]
+
+        self.n_neighbors_panel.widgets["n_neighbors"].visible = False
+        self.min_distance_panel.widgets["min_distance"].visible = False
 
         # Doesn't change
         self.settings_panel = self.get_settings_panel()
         self.main = pn.Column(*self.panels, sizing_mode="stretch_both")
 
         self.view = pn.Row(self.main, self.settings_panel)
+
+    @param.depends("switch_button", watch=True, on_init=False)
+    def launch_dimension_reduction(self):
+        if not self.first:
+            print("test")
+            if self.switch_button == "UMAP" and self.n_neighbors_panel.widgets["n_neighbors"].visible == False:
+                self.n_neighbors_panel.widgets["n_neighbors"].visible = True
+                self.min_distance_panel.widgets["min_distance"].visible = True
+            elif self.switch_button != "UMAP":
+                self.n_neighbors_panel.widgets["n_neighbors"].visible = False
+                self.min_distance_panel.widgets["min_distance"].visible = False
+                self.loading = True
+                self.update_plot(self.loaded_data)
+                self.loading = False
+            else:
+                self.loading = True
+                self.update_plot(self.loaded_data)
+                self.loading = False
 
     def normalize_data(self, df):
         scaler = MinMaxScaler()
@@ -179,7 +222,7 @@ class Dashboard(BaseExampleDashboard):
         return results
 
     def launch_UMAP(self, data):
-        um = umap.UMAP(n_neighbors=10, min_dist=0.1, metric="euclidean")
+        um = umap.UMAP(n_neighbors=self.n_neighbors, min_dist=self.min_distance, metric="euclidean")
         X_umap = um.fit_transform(data)
         results = pd.DataFrame(X_umap, columns=[["0", "1"]])
         results["quality"] = data["quality"]
@@ -191,7 +234,7 @@ class Dashboard(BaseExampleDashboard):
         df_data = pd.read_csv("TP4/pages/example_dashboards/new_beverage_chemistry.csv")
         df_data = df_data.drop("Id", axis=1)
 
-        self.loaded_data = [df_data]
+        self.loaded_data = df_data
 
         return df_data
 
@@ -229,7 +272,7 @@ class Dashboard(BaseExampleDashboard):
     def create_color_list(self, elements):
         color_list = []
         for elem in elements:
-            if elem < 6:
+            if elem < 7:
                 color_list.append(RED)
             else:
                 color_list.append(GREEN)
@@ -245,6 +288,7 @@ class Dashboard(BaseExampleDashboard):
 
     def _refresh_data(self, *_):
         self.loading = True
+        self.first = False
         data = self.get_data()
         self.update_plot(data)
         self.loading = False

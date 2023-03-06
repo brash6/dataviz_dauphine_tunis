@@ -21,7 +21,7 @@ setup(
         "folium",
         "invoke==1.3.0",
         "Pillow>=8.4.0",
-        "panel==0.13.0",
+        "panel==0.14.0",
         "bokeh==2.4.1",
         "redis",
         "numpy==1.21.3",
