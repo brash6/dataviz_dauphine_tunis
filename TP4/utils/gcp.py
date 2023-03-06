@@ -12,9 +12,6 @@ import pandas as pd
 import panel as pn
 import pyarrow as pa
 import redis
-from google.auth import impersonated_credentials
-from google.cloud import bigquery
-from google.cloud.exceptions import NotFound
 from logzero import logger
 
 from TP4.constants.constants import (
@@ -170,36 +167,6 @@ def replace_invalid_characters_in_labels(labels):
 def flushall():
     redis_client = get_redis()
     redis_client.flushall()
-
-
-def does_table_exist(table_ref, project_id):
-    client = get_client(project_id=project_id)
-    try:
-        client.get_table(table_ref)
-        return True
-    except NotFound:
-        return False
-
-
-def delete_tables(tables, not_found_ok=True):
-    """
-    Deletes a table or a list of tables from BigQuery.
-
-    Args:
-        tables: str or List[str]
-            Names of the tables to delete, they must be formatted as 'project.dataset.table'.
-        not_found_ok: bool, default True
-            Does not raise a not found error if set to True.
-    """
-    client = bigquery.Client()
-
-    if isinstance(tables, str):
-        tables = [tables]
-
-    for table in tables:
-        client.delete_table(table, not_found_ok=not_found_ok)
-
-    return
 
 
 def check_emptiness_of_dataframes(list_of_dfs):

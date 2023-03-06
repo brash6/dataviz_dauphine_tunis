@@ -34,7 +34,6 @@ setup(
         "requests>=2.26.0",
         "jinja2==2.11.3",
         "markupsafe==2.0.1",
-
     ],
     url="",
     license="",
