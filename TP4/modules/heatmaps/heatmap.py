@@ -86,6 +86,7 @@ class Heatmap(BasePlot):
             dataframe containing columns between which we want to compute correlation metric
         """
         self.df = df
+        print(df)
 
         # Prepare dataframe in the right format
         self.df_matrix = df.pivot(self.y, self.x, self.kpi)
@@ -110,6 +111,29 @@ class Heatmap(BasePlot):
                     if (tick.length > 30) return tick.substring(0, 30) + '...';
                     else return tick;
                 """
+        )
+
+    def update_heatmap_correlation(self, df):
+        corr = df.corr()
+        self.df = corr.stack().reset_index().rename(columns={'level_0': self.x, 'level_1': self.y, 0: self.kpi})
+        self.df_matrix = self.df.pivot(self.y, self.x, self.kpi)
+        self.df_matrix = self.df_matrix.fillna(0)
+
+        # Update ColumnDataSource & factors
+        self.source.data = self.df
+        self.figure.x_range.factors = list(self.df[self.x].drop_duplicates())
+        self.figure.y_range.factors = list(self.df[self.y].drop_duplicates())
+
+        self.mapper.low = self.df_matrix.min().min()
+        self.mapper.high = self.df_matrix.max().max()
+        self.color_bar.color_mapper = self.mapper
+
+        # Style the x-axis
+        self.figure.xaxis.formatter = FuncTickFormatter(
+            code="""
+                            if (tick.length > 30) return tick.substring(0, 30) + '...';
+                            else return tick;
+                        """
         )
 
     def make_figure(self):
@@ -144,7 +168,6 @@ class Heatmap(BasePlot):
         # Add color bar
         self.color_bar = ColorBar(
             color_mapper=self.mapper,
-            formatter=SIMPLE_BARPLOT_FORMATTER,
             location=(0, 0), ticker=BasicTicker(desired_num_ticks=10)
         )
 

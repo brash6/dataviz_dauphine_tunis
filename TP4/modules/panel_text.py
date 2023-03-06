@@ -14,10 +14,6 @@ class PanelText:
             else:
                 cardholder_text = """<p style='text-align: left;'><i> This Dashboard doesn't use cardholder info </i></p>"""
         if about:
-            text = f"""<p class="date-refresh"> Last data update was made on Novembre 2022 </p>""" \
-                   + cardholder_text \
-                   + text
-
             new_text = ''
             for line in text.splitlines():
                 new_text = new_text + "\n" + line.lstrip()
