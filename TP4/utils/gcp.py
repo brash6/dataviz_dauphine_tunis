@@ -7,7 +7,6 @@ from datetime import timedelta
 
 import aiohttp
 import async_timeout
-import google.auth
 import pandas as pd
 import panel as pn
 import pyarrow as pa
