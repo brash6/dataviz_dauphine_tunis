@@ -124,6 +124,7 @@ class Dashboard(BaseExampleDashboard):
             self.data_table.panel,
             self.heatmap_correlation.panel,
             self.boxplot.panel,
+            self.quality_grades_distribution.panel,
             pn.Row(pn.Column(self.switch_button_panel, margin=(0, 10, 0, 10)),
                    pn.Column('', max_width=100)),
             self.projection_scatter_plot.panel,
@@ -204,8 +205,8 @@ class Dashboard(BaseExampleDashboard):
         print(quality_distrib)
         self.quality_grades_distribution.figure.x_range.factors = list(quality_distrib["index"].astype(str))
         self.quality_grades_distribution.source.data = dict(
-            x=list(quality_distrib["index"]),
-            y=list(quality_distrib["quality"]),
+            x=list(quality_distrib["index"].astype(str)),
+            y=list(quality_distrib["quality"].astype(str)),
         )
 
         projection_results = self.reduce_dimension(data)
