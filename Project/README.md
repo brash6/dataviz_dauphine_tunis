@@ -6,6 +6,8 @@ The students have to develop a data application using [panel](https://panel.holo
 
 (Panel enables easy deployment and hosting using github for example, checkout : https://panel.holoviz.org/user_guide/Running_in_Webassembly.html)
 
+If your application uses packages with C components (like umap, scikit-learn or tensorflow), you won't be able to deploy with this method, therefore, I recommend you deploy using docker : https://www.stereolabs.com/docs/docker/creating-your-image/
+
 The final grade will depend on : 
 
 - Code cleanness and readability
