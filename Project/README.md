@@ -28,7 +28,7 @@ The data application is expected to have :
 - A dashboard to present the results of your analysis and your answer to the business question. Regression, Clustering, Neural Networks, etc, use the Machine Learning algorithms/models you want to answer the question. This dashboard can also be interactive with filters and widgets. 
 - A third optional dashboard to present further analysis
 
-Each dashboard should have a "Refresh dashboard" button. 
+Each dashboard can have a "Refresh dashboard" button if needed. 
 They can also include in-dashboard widgets triggering functions live on modification.
 
 ## Resources
