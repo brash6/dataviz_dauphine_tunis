@@ -25,7 +25,7 @@ The data application is expected to have :
 
 - A home page from which every dashboards are accessible 
 - A dashboard enabling the user to explore the dataset : This dashboard should have a side bar in which the user can select different filters (columns of the dataset). The plots (bar plots, scatter plots, box plots, line plots, etc.) should be efficiently designed and each one should give a relevant amount of information.  
-- A dashboard to present the results of your analysis and your answer to the business question. Regression, Clustering, use the Machine Learning algorithms/models you want to answer the question. This dashboard can also be interactive with filters and widgets. 
+- A dashboard to present the results of your analysis and your answer to the business question. Regression, Clustering, Neural Networks, etc, use the Machine Learning algorithms/models you want to answer the question. This dashboard can also be interactive with filters and widgets. 
 - A third optional dashboard to present further analysis
 
 Each dashboard should have a "Refresh dashboard" button. 
