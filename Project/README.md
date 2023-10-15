@@ -19,15 +19,15 @@ The final grade will depend on :
 
 ## Project description
 
-The project purpose is to answer a business question related to [the following dataset](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams) (Student's performance in exams) : 
+The project purpose is to answer a business question related to [the following dataset](https://huggingface.co/datasets/maharshipandya/spotify-tracks-dataset) (Spotify tracks dataset) : 
 
-<strong>How can we explain and predict both math, reading and writing scores of high school students in the United States ?</strong>
+<strong>How can we explain and predict the genre of a track ?</strong>
 
 The data application is expected to have : 
 
 - A home page from which every dashboards are accessible 
 - A dashboard enabling the user to explore the dataset : This dashboard should have a side bar in which the user can select different filters (columns of the dataset). The plots (bar plots, scatter plots, box plots, line plots, etc.) should be efficiently designed and each one should give a relevant amount of information.  
-- A dashboard to present the results of your analysis and your answer to the business question. Regression, Clustering, Neural Networks, etc, use the Machine Learning algorithms/models you want to answer the question. This dashboard can also be interactive with filters and widgets. 
+- A dashboard to present the results of your analysis and your answer to the business question. Regression, Clustering, Neural Networks, Feature extraction, etc, use the Machine Learning algorithms/models you want to answer the question. This dashboard can also be interactive with filters and widgets. 
 - A third optional dashboard to present further analysis
 
 Each dashboard can have a "Refresh dashboard" button if needed. 
