@@ -3,7 +3,7 @@ from typing import List, Optional
 
 import param
 
-from awesome_panel.application.models import Tag
+from TP4.awesome_panel.application.models import Tag
 
 
 class TagService(param.Parameterized):

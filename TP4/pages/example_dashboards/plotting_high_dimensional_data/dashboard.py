@@ -7,7 +7,7 @@ from bokeh.models import BoxSelectTool, BoxZoomTool, ResetTool, TapTool, SaveToo
 from sklearn import decomposition, manifold
 from sklearn.preprocessing import MinMaxScaler
 
-from TP4.constants.constants import LR_SINGULAR_COLOR, LR_DIVERGING_COLORS_LONG, RED, GREEN
+from TP4.constants.constants import LR_SINGULAR_COLOR, LR_DIVERGING_COLORS_LONG, RED, GREEN, LR_QUALITATIVE_COLORS_LONG
 from TP4.modules.barplots.simple_barplot import SimpleBarPlot
 from TP4.modules.base.base_dashboard import BaseExampleDashboard
 from TP4.modules.datatable import DataTablePlot
@@ -107,7 +107,7 @@ class Dashboard(BaseExampleDashboard):
             tools=[SaveTool()],
             kpi='Feature 1',
             x='Feature 2',
-            y='platform',
+            y='index',
         )
 
         # Simple BarPlot
@@ -139,6 +139,14 @@ class Dashboard(BaseExampleDashboard):
                                                                           <b>quality: </b> @labels
                                                                           """, )
 
+        self.iris_projection_scatter_plot = BasicScatterPlot(title="Projection of Iris dataset in 2 dimensions",
+                                                        x_axis_label="",
+                                                        y_axis_label="",
+                                                        tools=[SaveTool(), PanTool(), WheelZoomTool()],
+                                                        tooltips="""
+                                                                                  <b>species: </b> @labels
+                                                                                  """, )
+
         # Add in the panels list all the declared plot figures
         self.panels = [
             self.plot_text.panel,
@@ -150,6 +158,7 @@ class Dashboard(BaseExampleDashboard):
                    pn.Column('', max_width=100)),
             pn.Row(self.n_neighbors_panel, self.min_distance_panel),
             self.projection_scatter_plot.panel,
+            self.iris_projection_scatter_plot.panel
         ]
 
         self.n_neighbors_panel.widgets["n_neighbors"].visible = False
@@ -188,6 +197,7 @@ class Dashboard(BaseExampleDashboard):
 
     def preprocess_for_boxplot(self, data):
         data = self.normalize_data(data)
+        print(data)
         df = pd.DataFrame()
         for col in list(data.columns.values):
             df_col = pd.DataFrame(data[col])
@@ -195,37 +205,36 @@ class Dashboard(BaseExampleDashboard):
             df_col = df_col.rename(columns={col: "hwy"})
             cols = ["kind", "hwy"]
             df_col = df_col[cols]
-            df = df.append(df_col, ignore_index=True)
+            df = pd.concat([df, df_col], ignore_index=True)
         return df
 
-    def reduce_dimension(self, data):
+    def reduce_dimension(self, data, column):
+        data_no_class = data.drop(column, axis=1)
         if self.switch_button == "PCA":
-            results = self.launch_PCA(data)
+            results = self.launch_PCA(data_no_class, column=column)
         elif self.switch_button == "T-SNE":
-            results = self.launch_TSNE(data)
+            results = self.launch_TSNE(data_no_class, column=column)
         else:
-            results = self.launch_UMAP(data)
+            results = self.launch_UMAP(data_no_class, column=column)
+        results[column] = data[column]
         return results
 
-    def launch_PCA(self, data):
+    def launch_PCA(self, data, column):
         pca = decomposition.PCA(n_components=2)
         X_pca = pca.fit_transform(data)
         results = pd.DataFrame(X_pca, columns=[["0", "1"]])
-        results["quality"] = data["quality"]
         return results
 
-    def launch_TSNE(self, data):
+    def launch_TSNE(self, data, column):
         tsne = manifold.TSNE(n_components=2, init='random', random_state=42, perplexity=30)
         X_tsne = tsne.fit_transform(data)
         results = pd.DataFrame(X_tsne, columns=[["0", "1"]])
-        results["quality"] = data["quality"]
         return results
 
-    def launch_UMAP(self, data):
+    def launch_UMAP(self, data, column):
         um = umap.UMAP(n_neighbors=self.n_neighbors, min_dist=self.min_distance, metric="euclidean")
         X_umap = um.fit_transform(data)
         results = pd.DataFrame(X_umap, columns=[["0", "1"]])
-        results["quality"] = data["quality"]
         return results
 
     def get_data(self):
@@ -234,25 +243,34 @@ class Dashboard(BaseExampleDashboard):
         df_data = pd.read_csv("TP4/pages/example_dashboards/new_beverage_chemistry.csv")
         df_data = df_data.drop("Id", axis=1)
 
-        self.loaded_data = df_data
+        iris_data = pd.read_csv("TP4/pages/example_dashboards/iris.csv")
+        iris_data = iris_data.drop("Id", axis=1)
 
-        return df_data
+        self.loaded_data = [df_data, iris_data]
+
+        return [df_data, iris_data]
 
     def update_plot(self, data):
         print("update")
 
+        iris_data = data[1]
+        data = data[0]
+
         self.data_table.update_data(df=data)
         self.heatmap_correlation.update_heatmap_correlation(data)
 
-        quality_distrib = pd.DataFrame(data.quality.value_counts().reset_index()).sort_values(by=['index'])
+        quality_distrib = pd.DataFrame(data.quality.value_counts().reset_index()).sort_values(by=['quality'])
         print(quality_distrib)
-        self.quality_grades_distribution.figure.x_range.factors = list(quality_distrib["index"].astype(str))
+
+        self.quality_grades_distribution.figure.x_range.factors = list(quality_distrib["quality"].astype(str))
         self.quality_grades_distribution.source.data = dict(
-            x=list(quality_distrib["index"].astype(str)),
-            y=list(quality_distrib["quality"].astype(str)),
+            x=list(quality_distrib["quality"].astype(str)),
+            y=list(quality_distrib["count"].astype(str)),
         )
 
-        projection_results = self.reduce_dimension(data)
+        # Beverages dataset
+
+        projection_results = self.reduce_dimension(data, "quality")
         qualities = self.get_flat_list(projection_results, "quality")
         qualities_strings = [str(x) for x in qualities]
 
@@ -269,6 +287,25 @@ class Dashboard(BaseExampleDashboard):
             color=color_list,
         )
 
+        # Iris dataset
+
+        projection_results = self.reduce_dimension(iris_data, column="Species")
+        species = self.get_flat_list(projection_results, "Species")
+        species_strings = [str(x) for x in species]
+
+        first_axis = self.get_flat_list(projection_results, "0")
+        second_axis = self.get_flat_list(projection_results, "1")
+
+        iris_color_list = self.create_color_list_multiclass(species)
+
+        self.iris_projection_scatter_plot.source.data = dict(
+            labels=species_strings,
+            x=first_axis,
+            y=second_axis,
+            size=[20] * len(species),
+            color=iris_color_list,
+        )
+
     def create_color_list(self, elements):
         color_list = []
         for elem in elements:
@@ -276,6 +313,13 @@ class Dashboard(BaseExampleDashboard):
                 color_list.append(RED)
             else:
                 color_list.append(GREEN)
+        return color_list
+
+    def create_color_list_multiclass(self, elements):
+        color_list = []
+        distincts_elements = list(set(elements))
+        for elem in elements:
+            color_list.append(LR_QUALITATIVE_COLORS_LONG[distincts_elements.index(elem)])
         return color_list
 
     def get_flat_list(self, data, col):

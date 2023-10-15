@@ -6,13 +6,13 @@ import pathlib
 import panel as pn
 import param
 
-from awesome_panel.application.components import (
+from TP4.awesome_panel.application.components import (
     LoadingPageComponent,
     PageComponent,
     ProgressSpinnerComponent,
 )
-from awesome_panel.application.models import Application
-from awesome_panel.application.services import Services
+from TP4.awesome_panel.application.models import Application
+from TP4.awesome_panel.application.services import Services
 
 
 class ApplicationTemplate(pn.Template):

@@ -3,11 +3,11 @@ considerable time to load"""
 import panel as pn
 import param
 
-from awesome_panel.application.components.page_component import PageComponent
-from awesome_panel.application.components.progress_spinner_component import (
+from TP4.awesome_panel.application.components.page_component import PageComponent
+from TP4.awesome_panel.application.components.progress_spinner_component import (
     ProgressSpinnerComponent,
 )
-from awesome_panel.application.services import ProgressService, ThemeService
+from TP4.awesome_panel.application.services import ProgressService, ThemeService
 
 
 class LoadingPageComponent(PageComponent):

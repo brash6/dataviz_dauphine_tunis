@@ -11,7 +11,7 @@ import urllib.request
 
 import panel as pn
 
-from awesome_panel.express.assets import FONTAWESOME_PANEL_EXPRESS_CSS
+from TP4.awesome_panel.express.assets import FONTAWESOME_PANEL_EXPRESS_CSS
 
 FONTAWESOME_CSS_URL = "https://use.fontawesome.com/releases/v5.11.2/css/all.css"
 

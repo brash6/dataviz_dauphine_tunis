@@ -18,14 +18,14 @@ from typing import List
 import panel as pn
 import param
 
-from awesome_panel.designer import config
-from awesome_panel.designer.components import (
+from TP4.awesome_panel.designer import config
+from TP4.awesome_panel.designer.components import (
     CenteredComponent,
     StoppedComponent,
     TitleComponent,
 )
-from awesome_panel.designer.services import ReloadService
-from awesome_panel.designer.views import ErrorView
+from TP4.awesome_panel.designer.services import ReloadService
+from TP4.awesome_panel.designer.views import ErrorView
 
 
 class Designer(param.Parameterized):  # pylint: disable=too-many-instance-attributes
@@ -51,9 +51,9 @@ class Designer(param.Parameterized):  # pylint: disable=too-many-instance-attrib
     import panel as pn
     import param
 
-    from awesome_panel.designer import Designer, ReloadService, components
-    from awesome_panel.express import Card
-    from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
+    from TP4.awesome_panel.designer import Designer, ReloadService, components
+    from TP4.awesome_panel.express import Card
+    from TP4.awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 
     FIXTURES = pathlib.Path(__file__).parent / "fixtures"
     COMPONENT_CSS = FIXTURES / "component.css"

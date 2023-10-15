@@ -1,9 +1,9 @@
 """This module contains the ApplicationComponent"""
 import param
 
-from awesome_panel.application.models import Application
-from awesome_panel.application.services import Services
-from awesome_panel.application.views import ApplicationView
+from TP4.awesome_panel.application.models import Application
+from TP4.awesome_panel.application.services import Services
+from TP4.awesome_panel.application.views import ApplicationView
 
 
 class ApplicationComponent(param.Parameterized):

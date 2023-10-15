@@ -1,7 +1,7 @@
 """Bootstrap inspired functionality"""
 import panel as pn
 
-# from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
+# from TP4.awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 from panel.pane import Markdown
 
 BOOTSTRAP_CSS_URL = (

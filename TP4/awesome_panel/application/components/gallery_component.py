@@ -4,13 +4,13 @@ The GalleryComponent enables the user to view the pages in a columnar format and
 """
 import param
 
-from awesome_panel.application.components.gallery_page_component import (
+from TP4.awesome_panel.application.components.gallery_page_component import (
     GalleryPageComponent,
 )
-from awesome_panel.application.components.page_component import PageComponent
-from awesome_panel.application.models import Page
-from awesome_panel.application.services import PageService
-from awesome_panel.application.views.gallery_view import GalleryView
+from TP4.awesome_panel.application.components.page_component import PageComponent
+from TP4.awesome_panel.application.models import Page
+from TP4.awesome_panel.application.services import PageService
+from TP4.awesome_panel.application.views.gallery_view import GalleryView
 
 
 class GalleryComponent(PageComponent):

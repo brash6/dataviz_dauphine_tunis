@@ -7,7 +7,7 @@ from typing import Optional
 
 import param
 
-from awesome_panel.application.models import Progress
+from TP4.awesome_panel.application.models import Progress
 
 
 class ProgressService(param.Parameterized):

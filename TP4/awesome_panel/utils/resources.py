@@ -2,7 +2,7 @@
 from collections import defaultdict
 from typing import Dict, List, Optional
 
-from awesome_panel.application.models import Author, Resource, Tag
+from TP4.awesome_panel.application.models import Author, Resource, Tag
 
 
 def filter_by_tags(

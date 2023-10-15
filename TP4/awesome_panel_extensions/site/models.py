@@ -220,7 +220,7 @@ class Application(_BaseModel):
     servable = param.String(precedence=2, doc="The path to a servable Panel application")
     url = param.String(precedence=2, doc="The url of the application.")
     thumbnail = param.String(
-        default="https://mms.businesswire.com/media/20210615006263/fr/833665/22/LR-logo_%281%29.jpg", precedence=2,
+        default="https://www.espacemanager.com/sites/default/files/field/image/nouveau_logo_universite_dauphine_tunis.jpg", precedence=2,
         doc="The url of a thumbnail of the application.")
 
     def __init__(self, **params):

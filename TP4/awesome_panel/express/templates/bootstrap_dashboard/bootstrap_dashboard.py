@@ -3,8 +3,8 @@ import pathlib
 
 import panel as pn
 
-import awesome_panel.express as pnx
-from awesome_panel.express.assets import SCROLLBAR_PANEL_EXPRESS_CSS
+import TP4.awesome_panel.express as pnx
+from TP4.awesome_panel.express.assets import SCROLLBAR_PANEL_EXPRESS_CSS
 
 BOOTSTRAP_DASHBOARD_CSS = pathlib.Path(__file__).parent / "bootstrap_dashboard.css"
 BOOTSTRAP_DASHBOARD_TEMPLATE = pathlib.Path(__file__).parent / "bootstrap_dashboard.html"

@@ -10,7 +10,7 @@ import inspect
 
 import param
 
-from awesome_panel.application.models import Page, Progress, Toast
+from TP4.awesome_panel.application.models import Page, Progress, Toast
 
 
 class PageComponent(param.Parameterized):

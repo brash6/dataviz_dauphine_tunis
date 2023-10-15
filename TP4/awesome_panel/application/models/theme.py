@@ -11,7 +11,7 @@ import param
 from bokeh.themes.theme import Theme as BokehTheme
 from holoviews import Cycle
 
-from awesome_panel.application import assets
+from TP4.awesome_panel.application import assets
 
 hv.extension("bokeh")
 

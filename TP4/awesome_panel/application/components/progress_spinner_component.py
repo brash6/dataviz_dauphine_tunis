@@ -2,8 +2,8 @@
 import panel as pn
 import param
 
-from awesome_panel.application import assets
-from awesome_panel.application.services import ProgressService, ThemeService
+from TP4.awesome_panel.application import assets
+from TP4.awesome_panel.application.services import ProgressService, ThemeService
 
 
 class ProgressSpinnerComponent(pn.pane.HTML):

@@ -5,7 +5,7 @@ setup(
     version="0.0.1",
     packages=find_packages(exclude=("tests", "tasks")),
     install_requires=[
-        "pandas==1.3.4",
+        "pandas>=1.3.4",
         "pandasql==0.7.3",
         "pyarrow>=3.0.0",
         "pytest>=6.2.3",
@@ -24,7 +24,7 @@ setup(
         "panel==0.14.0",
         "bokeh==2.4.1",
         "redis",
-        "numpy==1.21.3",
+        "numpy>=1.22",
         "numerize==0.12",
         "colorcet==2.0.6",
         "matplotlib",

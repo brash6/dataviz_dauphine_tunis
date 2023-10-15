@@ -2,8 +2,8 @@
 import panel as pn
 import param
 
-from awesome_panel.application.models import Application
-from awesome_panel.application.services import PageService
+from TP4.awesome_panel.application.models import Application
+from TP4.awesome_panel.application.services import PageService
 
 
 class PageNavigationComponent(pn.Row):

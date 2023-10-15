@@ -10,7 +10,7 @@ import traceback
 
 import param
 
-from awesome_panel.designer.views import ErrorView
+from TP4.awesome_panel.designer.views import ErrorView
 
 
 class ReloadService(param.Parameterized):  # pylint: disable=too-many-instance-attributes

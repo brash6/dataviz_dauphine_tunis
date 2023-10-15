@@ -34,6 +34,8 @@ class BoxPlot(BarPlot):
         self.df["upper"] = self.df.q3 + 1.5 * iqr
         self.df["lower"] = self.df.q1 - 1.5 * iqr
 
+        print(self.df)
+
         self.source = ColumnDataSource(self.df)
 
         self.make_figure()

@@ -14,7 +14,7 @@ def module_to_github_url(
     """## The link to the GitHub Source File of the URL
 
     Arguments:
-        module {ModuleType} -- A module, for example package.awesome_panel.app.services
+        module {ModuleType} -- A module, for example package.TP4.awesome_panel.app.services
     Raises:
         ValueError: If the file path of the module is not in the project
     Returns:

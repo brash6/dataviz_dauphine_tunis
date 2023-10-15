@@ -3,9 +3,9 @@
 It provides the basic parameters of an application"""
 import param
 
-from awesome_panel.application.models.page import Page
+from TP4.awesome_panel.application.models.page import Page
 
-# from awesome_panel.application.models.template import Template
+# from TP4.awesome_panel.application.models.template import Template
 
 
 class Application(param.Parameterized):

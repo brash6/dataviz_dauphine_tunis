@@ -5,7 +5,7 @@ from TP4.config import tags
 from TP4.config.settings import THUMBNAILS_ROOT
 
 # pylint: disable=line-too-long
-from awesome_panel.application.models import Resource
+from TP4.awesome_panel.application.models import Resource
 
 # panel FILE ROOTS
 

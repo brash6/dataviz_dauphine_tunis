@@ -31,8 +31,8 @@ def view():
         css for css in pn.config.raw_css if not css.startswith("/* CUSTOM TEMPLATE CSS */")
     ]
     return GalleryTemplate(
-        site="SafeHaven",
-        title="Analytics Library",
+        site="App Example",
+        title="Dauphine Tunis Workshop",
         background_image="http://lestroisjardins.fr/wp-content/uploads/2016/04/White-header-background-1.jpg",
         description="""""",
         applications=get_app(site.applications, "main"),

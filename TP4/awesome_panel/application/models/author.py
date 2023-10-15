@@ -2,7 +2,7 @@
 
 import param
 
-from awesome_panel.utils import OrderByNameMixin
+from TP4.awesome_panel.utils import OrderByNameMixin
 
 
 class Author(OrderByNameMixin, param.Parameterized):

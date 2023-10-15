@@ -10,7 +10,7 @@ from application import pages
 # from TP4.pages import bootstrap_dashboard, custom_bokeh_model
 from TP4.config import tags
 from TP4.config.settings import GITHUB_BLOB_MASTER_URL, THUMBNAILS_ROOT
-from awesome_panel.application.models import Page
+from TP4.awesome_panel.application.models import Page
 
 GITHUB_PAGE_URL = GITHUB_BLOB_MASTER_URL + "application/pages/"
 

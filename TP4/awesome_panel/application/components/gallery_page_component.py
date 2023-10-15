@@ -2,9 +2,9 @@
 import panel as pn
 import param
 
-from awesome_panel.application.models import Page
-from awesome_panel.application.services import PageService
-from awesome_panel.application.views.gallery_page_view import GalleryPageView
+from TP4.awesome_panel.application.models import Page
+from TP4.awesome_panel.application.services import PageService
+from TP4.awesome_panel.application.views.gallery_page_view import GalleryPageView
 
 
 class GalleryPageComponent(param.Parameterized):

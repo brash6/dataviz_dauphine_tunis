@@ -69,7 +69,7 @@ class Heatmap(BasePlot):
         self.df[self.x] = self.df[self.x].astype("str")
 
         # Prepare dataframe in the right format
-        self.df_matrix = self.df.drop_duplicates([self.y, self.x]).pivot(self.y, self.x, self.kpi)
+        self.df_matrix = self.df.drop_duplicates([self.y, self.x]).pivot(index=self.y, columns=self.x, values=self.kpi)
         self.df_matrix = self.df_matrix.fillna(0)
         self.source = ColumnDataSource(data=self.df)
 
@@ -116,7 +116,7 @@ class Heatmap(BasePlot):
     def update_heatmap_correlation(self, df):
         corr = df.corr()
         self.df = corr.stack().reset_index().rename(columns={'level_0': self.x, 'level_1': self.y, 0: self.kpi})
-        self.df_matrix = self.df.pivot(self.y, self.x, self.kpi)
+        self.df_matrix = self.df.pivot(index=self.y, columns=self.x, values=self.kpi)
         self.df_matrix = self.df_matrix.fillna(0)
 
         # Update ColumnDataSource & factors

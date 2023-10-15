@@ -1,12 +1,12 @@
 """In this modules we create all tags"""
-from awesome_panel.application.models import Tag
+from TP4.awesome_panel.application.models import Tag
 
 ALTERNATIVE = Tag(name="Alternatives")
 APP = Tag(name="App")
 APP_IN_GALLERY = Tag(name="App In Gallery")
 ARTICLE = Tag(name="Article")
 AWESOME_PANEL_ORG = Tag(name="Awesome-panel.org")
-AWESOMEPANEL_EXPRESS = Tag(name="awesome_panel.express")
+AWESOMEPANEL_EXPRESS = Tag(name="TP4.awesome_panel.express")
 CODE = Tag(name="Code")
 DEPLOYMENT = Tag(name="Deployment")
 INSPIRATION = Tag(name="Inspiration")

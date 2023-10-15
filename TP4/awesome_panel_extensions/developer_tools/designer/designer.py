@@ -50,8 +50,8 @@ class Designer(pn.Template):
 
     from TP4.awesome_panel_extensions.developer_tools.designer import Designer, ComponentReloader,
     components
-    from awesome_panel.express import Card
-    from awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
+    from TP4.awesome_panel.express import Card
+    from TP4.awesome_panel.express.assets import BOOTSTRAP_PANEL_EXPRESS_CSS
 
     FIXTURES = pathlib.Path(__file__).parent / "fixtures"
     COMPONENT_CSS = FIXTURES / "component.css"

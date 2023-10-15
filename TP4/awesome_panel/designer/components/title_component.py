@@ -3,7 +3,7 @@ Designer"""
 import panel as pn
 import param
 
-from awesome_panel.application import assets
+from TP4.awesome_panel.application import assets
 
 
 class TitleComponent(param.Parameterized):

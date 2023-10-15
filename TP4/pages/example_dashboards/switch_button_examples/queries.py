@@ -95,6 +95,4 @@ class BQClient(BQBase):
         query = query.replace("\n", "")
         fields = ps.sqldf(query)
 
-        fields = fields.append({"platform": "ALL", "genre": "ALL", "publisher": "ALL"}, ignore_index=True)
-
         return fields

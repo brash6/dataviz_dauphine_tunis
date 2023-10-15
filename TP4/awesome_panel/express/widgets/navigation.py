@@ -3,7 +3,7 @@ from typing import List, Optional, Union
 
 import panel as pn
 
-import awesome_panel.express as pnx
+import TP4.awesome_panel.express as pnx
 
 
 class NavigationButton(pn.widgets.Button):

@@ -1,2 +1,2 @@
 """Exports"""
-from awesome_panel.designer.services.reload_service import ReloadService
+from TP4.awesome_panel.designer.services.reload_service import ReloadService
